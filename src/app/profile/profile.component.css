@@ -1,0 +1,29 @@
+body {
+    background: #F1F3FA;
+  }
+  
+  /* Profile container */
+  .profile {
+    margin: 20px 0;
+  }
+
+  
+  
+  /* Profile sidebar */
+  .profile-sidebar {
+    padding: 20px 0 10px 0;
+    background: #00FFD5;
+    display: inline-block;
+  }
+  .inactive {
+    display:none;
+  }
+  .active{
+    display:block;
+  }
+  
+  #bar{
+    width:20px;
+    height: 444px;
+    background-color: black;
+  }

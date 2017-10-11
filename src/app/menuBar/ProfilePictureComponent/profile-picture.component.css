@@ -1,0 +1,12 @@
+ .profile-userpic{
+     float: right;
+ }
+  .profile-userpic img {
+      margin: 0 auto;
+    float: none;
+    width: 50%;
+    height: 50%;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+  }

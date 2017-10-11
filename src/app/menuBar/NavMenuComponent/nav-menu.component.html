@@ -1,0 +1,7 @@
+<div *ngIf="isLoggedIn">
+    <button (click)="logout();" class="btn btn-success" routerLink="/logout">Log Out</button>
+</div>
+<div *ngIf="!isLoggedIn">
+    <button class="btn btn-success" routerLink="/register">Register</button>
+    <button class="btn btn-success" routerLink="/login">Log In</button>
+</div>

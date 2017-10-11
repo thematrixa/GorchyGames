@@ -1,0 +1,12 @@
+<div class="container">
+    <div [hidden]="submitted">
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <form (ngSubmit)="onSubmit()" #WelcomeForm="ngForm">
+            <button class="btn btn-success">Sign Up</button>
+            <button class="btn btn-success">Sign In</button>
+        </form>
+    </div>
+</div>
