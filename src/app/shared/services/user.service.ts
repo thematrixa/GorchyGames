@@ -10,7 +10,6 @@ export class UserService {
   }
 
   login(typedInUser: User): boolean {
-    console.log(typedInUser," Service");
     this.getUsers().then((users: User[]) => {
       // users
       //   .filter((user) => user.username == typedInUser.username &&  user.password == typedInUser.password)

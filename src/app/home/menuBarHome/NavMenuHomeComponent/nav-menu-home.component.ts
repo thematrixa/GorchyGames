@@ -7,7 +7,6 @@ import { RedirectService } from '../../../shared/services/redirect.service';
   selector: 'nav-menu-home',
   templateUrl: './nav-menu-home.component.html',
   styleUrls: ['./nav-menu-home.component.css'],
-  providers: [UserService],
 })
 
 export class NavMenuHomeComponent {
@@ -24,7 +23,6 @@ export class NavMenuHomeComponent {
 
   logout(): void {
     this.loggedIn = this.userService.logout();
-    console.log(this.loggedIn);
     this.redirectService.redirectToLogin();
   }
 

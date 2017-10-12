@@ -32,8 +32,13 @@ import { RedirectService } from './shared/services/redirect.service';
     HomePageModule,
     LoginPageModule,
   ],
-  providers: [UserService, RedirectService],
-  bootstrap: [AppComponent],
+  providers: [
+    UserService,
+    RedirectService,
+  ],
+  bootstrap: [
+    AppComponent,
+  ],
 
 })
 export class AppModule { }

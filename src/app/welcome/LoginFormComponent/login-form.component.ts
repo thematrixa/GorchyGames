@@ -28,9 +28,10 @@ export class LoginFormComponent implements OnInit {
 
   login(): void {
     this.loggedIn = this.userService.login(this.typedInUser);
-    if (this.loggedIn) {
-      this.redirectService.redirectToHome();
-    }
+    //console.log(this.loggedIn);
+    // if (this.loggedIn) {
+    //   this.redirectService.redirectToHome();
+    // }
   }
 
   logout(): void {
