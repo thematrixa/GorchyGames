@@ -6,7 +6,6 @@ import{UserService} from '../../shared/services/user.service';
     selector: 'login-page',
     templateUrl: './login-page.component.html',
     styleUrls: ['./login-page.component.css'],
-    providers: [UserService],
 })
 
 export class LoginPageComponent {
