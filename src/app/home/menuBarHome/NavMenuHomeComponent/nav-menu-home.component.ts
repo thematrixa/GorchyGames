@@ -1,15 +1,15 @@
 import{Component} from '@angular/core';
-import{UserService} from '../../shared/services/user.service';
+import{UserService} from '../../../shared/services/user.service';
 
 
 @Component({
-    selector: 'nav-menu',
-    templateUrl: './nav-menu.component.html',
-    styleUrls: ['./nav-menu.component.css'],
+    selector: 'nav-menu-home',
+    templateUrl: './nav-menu-home.component.html',
+    styleUrls: ['./nav-menu-home.component.css'],
     providers: [UserService],
 })
 
-export class NavMenuComponent {
+export class NavMenuHomeComponent {
 
  loggedIn:boolean;
  constructor(private userService: UserService) { }

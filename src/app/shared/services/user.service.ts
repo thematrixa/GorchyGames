@@ -29,8 +29,9 @@ export class UserService {
     return Promise.reject(error.message || error);
   }
 
-  logout(): void {
+  logout(): boolean {
     localStorage.removeItem('currentUser');
+    return false;
   }
 
   isLoggedIn(): boolean {

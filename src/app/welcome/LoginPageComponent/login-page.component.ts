@@ -1,22 +1,21 @@
-import{Component} from '@angular/core'
+import{Component} from '@angular/core';
 import{UserService} from '../../shared/services/user.service';
 
+
 @Component({
-    selector: 'profile-picture',
-    templateUrl: './profile-picture.component.html',
-    styleUrls: ['./profile-picture.component.css'],
+    selector: 'login-page',
+    templateUrl: './login-page.component.html',
+    styleUrls: ['./login-page.component.css'],
     providers: [UserService],
 })
 
-export class ProfilePictureComponent {
+export class LoginPageComponent {
 
- 
  loggedIn:boolean;
  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.loggedIn = this.userService.isLoggedIn();
   }
-
 
 }

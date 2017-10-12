@@ -1,0 +1,12 @@
+#menuBarWelcome {
+    width:100%;
+    height: 8em;
+    background-color:green;
+  }
+  table {
+      float:right;
+  }
+
+  nav-menu-welcome {
+    float:right;
+  }

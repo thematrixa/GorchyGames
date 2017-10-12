@@ -1,36 +1,40 @@
 import { Component } from '@angular/core';
 import { User } from '../../shared/user';
-import { UserService } from '../../shared/services/user.service';
 import { OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { UserService } from '../../shared/services/user.service';
+import { RedirectService } from '../../shared/services/redirect.service';
 
 @Component({
   selector: 'login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css'],
-  providers: [UserService],
+  providers: [UserService, RedirectService],
 
 })
 export class LoginFormComponent implements OnInit {
 
   typedInUser = { "username": "", "password": "" };
   users: User[];
-  loggedIn=false;
+  loggedIn = false;
 
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private redirectService: RedirectService) { }
 
   ngOnInit(): void {
     this.loggedIn = this.userService.isLoggedIn();
   }
 
-
   login(): void {
     this.loggedIn = this.userService.login(this.typedInUser);
+    if (this.loggedIn) {
+      this.redirectService.redirectToHome();
+    }
   }
 
   logout(): void {
-    this.userService.logout();
+    this.loggedIn = this.userService.logout();
   }
 
 }
