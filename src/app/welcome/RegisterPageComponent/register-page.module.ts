@@ -24,6 +24,6 @@ import {RegisterFormModule} from '../../welcome/RegisterFormComponent/register-f
         RouterModule,
         FormsModule
     ],
-  exports: []
+  exports: [RegisterPageComponent]
 })
 export class RegisterPageModule {}
