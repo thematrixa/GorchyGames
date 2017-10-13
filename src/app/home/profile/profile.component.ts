@@ -9,7 +9,7 @@ import{Component} from '@angular/core'
 
 export class ProfileComponent {
 
-    active = "inactive"
+    active = "inactive";
 
     pullProfileBar():void{
         if(this.active=="inactive"){
