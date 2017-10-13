@@ -8,20 +8,20 @@ import {MenuBarWelcomeComponent} from '../../welcome/menuBarWelcome/menu-bar-wel
 import {WelcomeFormComponent} from '../../home/WelcomeFormComponent/welcome-form.component';
 import {HomePageComponent} from '../../home/HomePageComponent/home-page.component';
 import {AppRoutingModule} from '../../app-routing.module';
-import {WelcomePageModule} from '../../welcome/welcome.module';
+import {RegisterPageComponent} from '../../welcome/RegisterPageComponent/register-page.component';
 import { FormsModule } from '@angular/forms';
+import {WelcomePageModule} from '../../welcome/welcome.module';
 import {MenuBarModule} from '../../welcome/menuBarWelcome/menu-bar.module';
 
 
 @NgModule({
     declarations:[
-        LoginPageComponent,
-        LoginFormComponent,
+        RegisterFormComponent,
     ],
     imports:[
         RouterModule,
         FormsModule
     ],
-  exports: []
+  exports: [RegisterFormComponent]
 })
-export class LoginPageModule {}
+export class RegisterFormModule {}

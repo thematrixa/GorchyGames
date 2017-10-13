@@ -6,7 +6,6 @@ import{UserService} from '../../../shared/services/user.service';
     selector: 'nav-menu-welcome',
     templateUrl: './nav-menu-welcome.component.html',
     styleUrls: ['./nav-menu-welcome.component.css'],
-    providers: [UserService],
 })
 
 export class NavMenuWelcomeComponent {

@@ -18,19 +18,23 @@ import { HomePageModule } from './home/HomePageComponent/home-page.module';
 import { LoginPageModule } from './welcome/LoginPageComponent/login-page.module';
 import { UserService } from './shared/services/user.service';
 import { RedirectService } from './shared/services/redirect.service';
+import { RegisterPageModule } from './welcome/RegisterPageComponent/register-page.module';
+import {WelcomePageModule} from './welcome/welcome.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeFormComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HomePageModule,
-    LoginPageModule,
+    WelcomePageModule,
+
   ],
   providers: [
     UserService,

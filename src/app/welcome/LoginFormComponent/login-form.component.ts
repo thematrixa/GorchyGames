@@ -9,7 +9,6 @@ import { RedirectService } from '../../shared/services/redirect.service';
   selector: 'login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css'],
-  providers: [UserService, RedirectService],
 
 })
 export class LoginFormComponent implements OnInit {

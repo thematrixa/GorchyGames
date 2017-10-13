@@ -11,17 +11,8 @@ import { ProfileOptionsComponent } from '../profile/ProfileOptionsComponent/prof
 import {WelcomeFormComponent} from '../../home/WelcomeFormComponent/welcome-form.component';
 import {LoginFormComponent} from '../../welcome/LoginFormComponent/login-form.component';
 import {RegisterFormComponent} from '../../welcome/RegisterFormComponent/register-form.component';
-
-const routes: Routes = [
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
-  { path: 'register', component: RegisterFormComponent },
-  { path: 'login', component: LoginFormComponent },
-  { path: 'welcome', component: WelcomeFormComponent },
-  { path: 'home', component: HomePageComponent },
-
-];
-
-
+import {AppRoutingModule} from '../../app-routing.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -34,8 +25,8 @@ const routes: Routes = [
         ProfileOptionsComponent
     ],
     imports:[
-        RouterModule,
-        RouterModule.forRoot(routes),
+        AppRoutingModule,
+        FormsModule,
     ],
     exports: [HomePageComponent]
 })

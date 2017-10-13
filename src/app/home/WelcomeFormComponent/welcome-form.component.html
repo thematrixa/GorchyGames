@@ -4,9 +4,9 @@
             <span aria-hidden="true">&times;</span>
         </button>
 
-        <form (ngSubmit)="onSubmit()" #WelcomeForm="ngForm">
-            <button class="btn btn-success">Sign Up</button>
-            <button class="btn btn-success">Sign In</button>
+        <form  #WelcomeForm="ngForm">
+            <button class="btn btn-success" routerLink="/register">Sign Up</button>
+            <button class="btn btn-success" routerLink="/login">Sign In</button>
         </form>
     </div>
 </div>
