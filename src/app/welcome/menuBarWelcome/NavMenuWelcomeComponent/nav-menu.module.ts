@@ -17,6 +17,7 @@ import {WelcomePageModule} from '../../../welcome/welcome.module';
         NavMenuWelcomeComponent
     ],
     imports:[
+        RouterModule,
     ],
   exports: [NavMenuWelcomeComponent]
 })

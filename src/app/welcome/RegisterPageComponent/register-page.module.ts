@@ -20,6 +20,7 @@ import {RegisterFormModule} from '../../welcome/RegisterFormComponent/register-f
         RegisterPageComponent
     ],
     imports:[
+        MenuBarModule,
         RegisterFormModule,
         RouterModule,
         FormsModule

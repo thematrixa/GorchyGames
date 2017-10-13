@@ -19,6 +19,7 @@ import {MenuBarModule} from '../../welcome/menuBarWelcome/menu-bar.module';
         LoginFormComponent,
     ],
     imports:[
+        MenuBarModule,
         RouterModule,
         FormsModule
     ],
