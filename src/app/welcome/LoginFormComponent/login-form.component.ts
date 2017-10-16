@@ -16,7 +16,7 @@ export class LoginFormComponent implements OnInit {
   typedInUser = { "username": "", "password": "" };
   users: User[];
   loggedIn = false;
-
+  user : User;
 
   constructor(private userService: UserService,
     private redirectService: RedirectService) { }
@@ -26,7 +26,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   login(): void {
-    this.loggedIn = this.userService.login(this.typedInUser);
+    this.userService.login(this.typedInUser).subscribe(data =>{this.user = data},error => console.error());
     //console.log(this.loggedIn);
     if (this.loggedIn) {
       this.redirectService.redirectToHome();

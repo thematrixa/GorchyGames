@@ -2,14 +2,22 @@ import { Injectable } from '@angular/core';
 
 import { User } from '../user';
 import { USERS } from './mock-users';
+import {Http,Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {
-  getUsers(): Promise<User[]> {
-    return Promise.resolve(USERS);
+
+  
+  url : String = 'http://localhost:8080';
+  constructor(private http: Http){};
+
+  getUsers(): Observable<User[]> {
+    return this.http.get(this.url + '/getAll').map((response:Response) => response.json());
   }
 
-  login(typedInUser: User): boolean {
+  login(typedInUser: User): Observable<User> {
     this.getUsers().then((users: User[]) => {
       // users
       //   .filter((user) => user.username == typedInUser.username &&  user.password == typedInUser.password)

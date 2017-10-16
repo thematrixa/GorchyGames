@@ -1,6 +1,7 @@
 <div class="container">
     <div [hidden]="submitted">
         <h1>Login Form</h1>
+        {{users}}
         <form (ngSubmit)="login();" #LoginForm="ngForm">
             <div class="form-group">
                 <label for="name">Name</label>
