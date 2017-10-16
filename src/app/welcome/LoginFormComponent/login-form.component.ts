@@ -28,6 +28,9 @@ export class LoginFormComponent implements OnInit {
   login(): void {
     this.userService.login(this.typedInUser).subscribe(data =>{this.user = data},error => console.error());
     //console.log(this.loggedIn);
+    if(this.user!=null){
+      this.loggedIn = true;
+    }
     if (this.loggedIn) {
       this.redirectService.redirectToHome();
     }

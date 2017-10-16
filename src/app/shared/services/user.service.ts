@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { User } from '../user';
 import { USERS } from './mock-users';
-import {Http,Response} from '@angular/http';
+import {Headers, Http,Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -10,25 +10,24 @@ import 'rxjs/add/operator/map';
 export class UserService {
 
   
-  url : String = 'http://localhost:8080';
+  url : String = 'http://localhost:8080/gorchygames/users';
   constructor(private http: Http){};
 
   getUsers(): Observable<User[]> {
     return this.http.get(this.url + '/getAll').map((response:Response) => response.json());
   }
 
-  login(typedInUser: User): Observable<User> {
-    this.getUsers().then((users: User[]) => {
-      // users
-      //   .filter((user) => user.username == typedInUser.username &&  user.password == typedInUser.password)
-      //   .map(user => localStorage.setItem('currentUser', JSON.stringify(user)));
-      for (let user of users) {
-        if (typedInUser.username == user.username && typedInUser.password == user.password) {
-          localStorage.setItem('currentUser', JSON.stringify(user));
-        }
-      }
-    }).catch(this.handleError);
-      return this.isLoggedIn();
+  login(typedInUser: User) : any {
+   this.getUsers().subscribe((users: User[]) => {
+       users
+         .filter((user) => user.username == typedInUser.username &&  user.password == typedInUser.password)
+         .map(user => user);
+      // for (let user of users) {
+      //   if (typedInUser.username == user.username && typedInUser.password == user.password) {
+      //     localStorage.setItem('currentUser', JSON.stringify(user));
+      //   }
+      // }
+    })
   }
 
   private handleError(error: any): Promise<any> {

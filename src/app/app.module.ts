@@ -21,6 +21,7 @@ import { RedirectService } from './shared/services/redirect.service';
 import { RegisterPageModule } from './welcome/RegisterPageComponent/register-page.module';
 import {WelcomePageModule} from './welcome/welcome.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpModule,
     HomePageModule,
     WelcomePageModule,
 
