@@ -5,7 +5,7 @@
         <form (ngSubmit)="login();" #LoginForm="ngForm">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" required [(ngModel)]="typedInUser.username" name="name" #name="ngModel">
+                <input type="text" class="form-control" id="name" required [(ngModel)]="typedInUser.userName" name="name" #name="ngModel">
                 <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                     Name is required
                 </div>
@@ -13,7 +13,7 @@
 
             <div class="form-group">
                 <label for="pass">Password</label>
-                <input type="text" class="form-control" id="pass" required [(ngModel)]="typedInUser.password" name="pass" #pass="ngModel">
+                <input type="text" class="form-control" id="pass" required [(ngModel)]="typedInUser.passWord" name="pass" #pass="ngModel">
                 <div [hidden]="pass.valid || pass.pristine" class="alert alert-danger">
                     Password is required
                 </div>

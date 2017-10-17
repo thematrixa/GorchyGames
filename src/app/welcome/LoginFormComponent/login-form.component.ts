@@ -4,6 +4,8 @@ import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../shared/services/user.service';
 import { RedirectService } from '../../shared/services/redirect.service';
+import {Observable} from 'rxjs/Observable';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'login-form',
@@ -13,7 +15,7 @@ import { RedirectService } from '../../shared/services/redirect.service';
 })
 export class LoginFormComponent implements OnInit {
 
-  typedInUser = { "username": "", "password": "" };
+  typedInUser = { "userName": "", "passWord": "" };
   users: User[];
   loggedIn = false;
   user : User;
@@ -22,18 +24,10 @@ export class LoginFormComponent implements OnInit {
     private redirectService: RedirectService) { }
 
   ngOnInit(): void {
-    this.loggedIn = this.userService.isLoggedIn();
   }
 
-  login(): void {
-    this.userService.login(this.typedInUser).subscribe(data =>{this.user = data},error => console.error());
-    //console.log(this.loggedIn);
-    if(this.user!=null){
-      this.loggedIn = true;
-    }
-    if (this.loggedIn) {
-      this.redirectService.redirectToHome();
-    }
+  login() {
+    this.userService.login(this.typedInUser).subscribe(data =>{this.user = data;this.redirectService.redirectToHome();},error => console.error());
   }
 
   logout(): void {
