@@ -14,7 +14,7 @@ import { JsonPipe } from '@angular/common';
 
 })
 export class LoginFormComponent implements OnInit {
-
+  loading:boolean;
   typedInUser = { "userName": "", "passWord": "" };
   users: User[];
   loggedIn = false;
@@ -24,10 +24,16 @@ export class LoginFormComponent implements OnInit {
     private redirectService: RedirectService) { }
 
   ngOnInit(): void {
+    this.loading = false;
   }
 
   login() {
-    this.userService.login(this.typedInUser).subscribe(data =>{this.user = data;this.redirectService.redirectToHome();},error => console.error());
+    this.loading=true;
+    this.userService.login(this.typedInUser).subscribe(
+        data =>{this.user = data;
+                this.loading=false;
+                this.redirectService.redirectToHome();
+        },error => console.error());
   }
 
   logout(): void {

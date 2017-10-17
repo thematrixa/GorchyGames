@@ -20,7 +20,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-success" [disabled]="!LoginForm.form.valid">Sign In</button>
+            <button type="submit" class="btn btn-success" [disabled]="!LoginForm.form.valid || loading">Sign In</button>
             
         </form>
     </div>
