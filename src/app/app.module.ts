@@ -1,3 +1,4 @@
+import { AuthenticationService } from './shared/services/authentication.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -42,6 +43,7 @@ import { HttpModule } from '@angular/http';
   providers: [
     UserService,
     RedirectService,
+    AuthenticationService
   ],
   bootstrap: [
     AppComponent,

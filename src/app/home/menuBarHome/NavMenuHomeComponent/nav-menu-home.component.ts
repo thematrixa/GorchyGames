@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../shared/services/authentication.service';
 import { Component } from '@angular/core';
 import { UserService } from '../../../shared/services/user.service';
 import { RedirectService } from '../../../shared/services/redirect.service';
@@ -14,7 +15,8 @@ export class NavMenuHomeComponent {
   loggedIn: boolean;
   constructor(
     private userService: UserService,
-    private redirectService: RedirectService
+    private redirectService: RedirectService,
+    private authenticationService: AuthenticationService,
   ) { }
 
   ngOnInit(): void {
@@ -22,7 +24,7 @@ export class NavMenuHomeComponent {
   }
 
   logout(): void {
-    this.loggedIn = this.userService.logout();
+    this.loggedIn = this.authenticationService.logout();
     this.redirectService.redirectToLogin();
   }
 

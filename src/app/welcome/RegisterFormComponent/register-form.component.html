@@ -20,7 +20,7 @@
 
 
             <button type="submit" class="btn btn-success" [disabled]="!RegisterForm.form.valid">Register</button>
-            
+            <button (click)="redirectToLogin();"  class="btn btn-success" [disabled]="notRegistered">Proceed to Log In</button>
         </form>
     </div>
 </div>
