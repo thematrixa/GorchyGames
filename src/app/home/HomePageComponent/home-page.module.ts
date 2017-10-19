@@ -1,6 +1,6 @@
+import { CarouselComponent } from './../CarouselComponent/carousel.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { HomePageComponent } from '../HomePageComponent/home-page.component';
 import { NavMenuHomeComponent } from '../menuBarHome/NavMenuHomeComponent/nav-menu-home.component';
 import { ProfilePictureComponent } from '../menuBarHome/ProfilePictureComponent/profile-picture.component';
@@ -22,7 +22,8 @@ import {FormsModule} from '@angular/forms';
         MenuBarHomeComponent,
         ProfileComponent,
         ProfileInfoComponent,
-        ProfileOptionsComponent
+        ProfileOptionsComponent,
+        CarouselComponent,
     ],
     imports:[
         AppRoutingModule,

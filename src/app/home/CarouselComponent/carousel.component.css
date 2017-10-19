@@ -1,0 +1,43 @@
+.carousel-inner.onebyone-carosel {
+  margin: auto;
+  width: 90%;
+}
+.onebyone-carosel .active.left {
+  left: -33.33%;
+}
+.onebyone-carosel .active.right {
+  left: 33.33%;
+}
+.onebyone-carosel .next {
+  left: 33.33%;
+}
+.onebyone-carosel .prev {
+  left: -33.33%;
+}
+
+.none {
+  display:none;
+}
+
+.activee {
+  border-radius: 10px;
+}
+
+
+.semi-active{
+  
+display:inline;
+padding-top:10px;
+width:80%;
+height:80%;
+
+}
+.semi-active img {
+
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+            filter: grayscale(100%); 
+
+}

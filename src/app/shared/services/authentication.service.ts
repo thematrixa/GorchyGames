@@ -17,14 +17,26 @@ export class AuthenticationService {
 
     url: String = 'http://localhost:8080/gorchygames/users';
     private token: string;
-    private headers;
 
-    login(typedInUser: User) : Observable<any> {
-     return this.http.post(this.url + '/login', typedInUser);
+    login(typedInUser: User): Observable<any> {
+       return this.http.post(this.url + '/login', typedInUser);
     }
+
     logout(): boolean {
         localStorage.removeItem('currentUser');
         return false;
+    }
+
+    storeToken(): void {
+        localStorage.setItem('currentUser', this.token);
+    }
+
+    setToken(token: string): void {
+        this.token = token;
+    }
+
+    getToken(): string {
+        return this.token;
     }
 
 

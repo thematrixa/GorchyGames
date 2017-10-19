@@ -19,8 +19,13 @@
             </div>
 
 
-            <button type="submit" class="btn btn-success" [disabled]="!RegisterForm.form.valid">Register</button>
-            <button (click)="redirectToLogin();"  class="btn btn-success" [disabled]="notRegistered">Proceed to Log In</button>
+            <button (click)="redirectToLogin();" class="btn btn-success {{active}}" [disabled]="notRegistered">Proceed to Log In</button>
+            <button type="submit" class="btn btn-success {{!active}}" [disabled]="!RegisterForm.form.valid">Register</button>
+
+
+            <br>
+            <br> {{errorMessage}}
+
         </form>
     </div>
 </div>

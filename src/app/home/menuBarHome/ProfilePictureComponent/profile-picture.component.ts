@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component ,OnInit} from '@angular/core'
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { UserService } from '../../../shared/services/user.service';
 
@@ -10,7 +10,7 @@ import { UserService } from '../../../shared/services/user.service';
 
 })
 
-export class ProfilePictureComponent {
+export class ProfilePictureComponent implements OnInit {
 
   loggedIn: boolean;
   constructor(private userService: UserService) { }

@@ -14,6 +14,7 @@ export class RegisterFormComponent {
   public notRegistered: boolean;
   public errorMessage: string;
   private responseStatus;
+  active: boolean;
 
 
   constructor(private userService: UserService,
@@ -21,6 +22,7 @@ export class RegisterFormComponent {
 
   ngOnInit(): void {
     this.notRegistered = true;
+    this.active = false;
   }
 
   registerUser() {
@@ -28,6 +30,7 @@ export class RegisterFormComponent {
     this.responseStatus = this.userService.registerUser(this.user)
       .subscribe(response => {
         this.notRegistered = false;
+        this.toggleProceedButton();
       }, error => {
         this.notRegistered = true;
         this.errorMessage = error.text();
@@ -38,6 +41,16 @@ export class RegisterFormComponent {
   redirectToLogin(): void {
     this.redirectService.redirectToLogin();
   }
+
+  
+  toggleProceedButton():void{
+    if(this.active==false){
+        this.active = true;
+    }
+    else{
+        this.active=false;
+    }
+}
 
 
 }

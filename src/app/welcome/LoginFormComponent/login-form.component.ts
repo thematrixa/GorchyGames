@@ -18,7 +18,7 @@ export class LoginFormComponent implements OnInit {
   
   loading: boolean;
   typedInUser = { "userName": "", "passWord": "" };
-  headers : Headers;
+  errorMessage: string;
 
   constructor(private userService: UserService,
     private redirectService: RedirectService,
@@ -30,18 +30,26 @@ export class LoginFormComponent implements OnInit {
   }
 
   login() {
+    let token : String;
     this.loading = true;
-    this.userService.login(this.typedInUser)
+    this.authenticationService.login(this.typedInUser)
       .subscribe(
-      data => {this.headers = data.headers;
-        console.log(data.headers);
-        console.log(this.headers);
-        console.log();
-          // if(this.token!=null){/
-              // localStorage.setItem('currentUser',this.token);
-          // }
-        this.loading = false;
-        this.redirectService.redirectToHome();
-      }, error => console.error());
+        data => {
+          this.authenticationService.setToken(data.headers.get('authorization'));
+        if (this.authenticationService.getToken() != null) {
+            this.authenticationService.storeToken();
+            this.redirectService.redirectToHome();
+        }
+        else {
+          this.loading=false;
+          this.redirectService.redirectToLogin();
+        }
+
+        },
+        error => {console.log(error),
+            this.loading=false;
+            this.errorMessage = "Username or password is incorrect!"
+          }
+      );
   }
 }
