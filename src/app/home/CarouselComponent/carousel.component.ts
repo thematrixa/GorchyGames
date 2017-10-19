@@ -11,7 +11,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
   providers: [UserService],
-
+  animations: [
+    trigger('heroState', [
+      state('inactive', style({
+        backgroundColor: '#eee',
+        transform: 'scale(1)'
+      })),
+      state('active',   style({
+        backgroundColor: '#cfd8dc',
+        transform: 'scale(1.1)'
+      })),
+      transition('inactive => active', animate('100ms ease-in')),
+      transition('active => inactive', animate('100ms ease-out'))
+    ])
+  ]
 })
 
 export class CarouselComponent implements OnInit, AfterViewInit {
@@ -19,7 +32,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   number:number;
   active: number;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, public state = 'inactive') { }
 
   ngOnInit(): void {
     this.number = 50000;
@@ -35,6 +48,9 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   //   document.getElementById(this.active-1+"").className = "semi-active";
  
   // }
+  toggleState() {
+    this.state = this.state === 'active' ? 'inactive' : 'active';
+  }
 
   pullGamesToTheLeft():void{
 
