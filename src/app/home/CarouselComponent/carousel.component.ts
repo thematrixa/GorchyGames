@@ -1,9 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core'
-import { trigger, state, style, animate, transition } from '@angular/animations';
 import { UserService } from '../../shared/services/user.service';
-import * as carouselComponentJQuery from './..//CarouselComponent/carousel.component.js';
 import { OnInit } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 
 @Component({
@@ -13,16 +12,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [UserService],
   animations: [
     trigger('heroState', [
-      state('inactive', style({
-        backgroundColor: '#eee',
+      state('semi-active', style({
+        opacity: 0.5,
         transform: 'scale(1)'
       })),
-      state('active',   style({
-        backgroundColor: '#cfd8dc',
-        transform: 'scale(1.1)'
+      state('activee',   style({
+        transform: 'scale(1.2)'
       })),
-      transition('inactive => active', animate('100ms ease-in')),
-      transition('active => inactive', animate('100ms ease-out'))
+      state('none',   style({
+        display:'none'
+      })),
+      transition('semi-active => active', animate('100ms ease-in')),
+      transition('active => semi-active', animate('100ms ease-out')),
+      transition('none => semi-active', animate('100ms ease-in')),
+      transition('semi-active => none', animate('100ms ease-out'))
+      
     ])
   ]
 })
@@ -31,8 +35,8 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   number:number;
   active: number;
-
-  constructor(private userService: UserService, public state = 'inactive') { }
+  public state = 'inactive';
+  constructor(private userService: UserService,) { }
 
   ngOnInit(): void {
     this.number = 50000;
@@ -42,16 +46,6 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
  
   }
-
-  // pullGamesToTheRight():void{
-  //   this.active = this.active+1;
-  //   document.getElementById(this.active-1+"").className = "semi-active";
- 
-  // }
-  toggleState() {
-    this.state = this.state === 'active' ? 'inactive' : 'active';
-  }
-
   pullGamesToTheLeft():void{
 
     if(this.active==0){

@@ -1,3 +1,4 @@
+import { TicTacToePageModule } from './home/TicTacToe/TicTacToePageComponent/tic-tac-toe-page.module';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -38,6 +39,7 @@ import { HttpModule } from '@angular/http';
     HttpModule,
     HomePageModule,
     WelcomePageModule,
+    TicTacToePageModule
 
   ],
   providers: [

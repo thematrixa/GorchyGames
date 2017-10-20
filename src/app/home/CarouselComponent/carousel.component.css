@@ -1,43 +1,33 @@
-.carousel-inner.onebyone-carosel {
-  margin: auto;
-  width: 90%;
-}
-.onebyone-carosel .active.left {
-  left: -33.33%;
-}
-.onebyone-carosel .active.right {
-  left: 33.33%;
-}
-.onebyone-carosel .next {
-  left: 33.33%;
-}
-.onebyone-carosel .prev {
-  left: -33.33%;
+table {
+  margin:auto;
 }
 
 .none {
   display:none;
 }
 
-.activee {
-  border-radius: 10px;
+.active img {
+  border-radius:10px;
+}
+.active img:hover {
+  transform : scale(1.1);
 }
 
 
-.semi-active{
-  
-display:inline;
+
+.semi-active img {
 padding-top:10px;
-width:80%;
-height:80%;
+opacity:0.5;
 
 }
 .semi-active img {
-
+    width:80%;
+    height:80%;
     -webkit-filter: grayscale(100%);
        -moz-filter: grayscale(100%);
          -o-filter: grayscale(100%);
         -ms-filter: grayscale(100%);
             filter: grayscale(100%); 
+            
 
 }

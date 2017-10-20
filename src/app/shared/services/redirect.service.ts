@@ -21,4 +21,7 @@ export class RedirectService {
     redirectToRegister(): void {
         this.router.navigate(['/register']);
     }
+    redirectToTicTacToe(): void {
+        this.router.navigate(['/tictactoe']);
+    }
 }

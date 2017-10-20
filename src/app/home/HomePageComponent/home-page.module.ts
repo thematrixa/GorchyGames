@@ -1,10 +1,14 @@
+import { ProfileModule } from './../profile/profile.module';
+import { ProfilePictureModule } from './../menuBarHome/ProfilePictureComponent/profile-picture.module';
+import { MenuBarHomeModule } from './../menuBarHome/menu-bar-home.module';
+import { NavMenuHomeModule } from './../menuBarHome/NavMenuHomeComponent/nav-menu-home.module';
+import { MenuBarHomeComponent } from './../menuBarHome/menu-bar-home.component';
 import { CarouselComponent } from './../CarouselComponent/carousel.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from '../HomePageComponent/home-page.component';
 import { NavMenuHomeComponent } from '../menuBarHome/NavMenuHomeComponent/nav-menu-home.component';
 import { ProfilePictureComponent } from '../menuBarHome/ProfilePictureComponent/profile-picture.component';
-import { MenuBarHomeComponent } from '../menuBarHome/menu-bar-home.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { ProfileInfoComponent } from '../profile/ProfileInfoComponent/profile-info.component';
 import { ProfileOptionsComponent } from '../profile/ProfileOptionsComponent/profile-options.component';
@@ -17,18 +21,15 @@ import {FormsModule} from '@angular/forms';
 @NgModule({
     declarations: [
         HomePageComponent,
-        NavMenuHomeComponent,
-        ProfilePictureComponent,
-        MenuBarHomeComponent,
-        ProfileComponent,
-        ProfileInfoComponent,
-        ProfileOptionsComponent,
         CarouselComponent,
     ],
     imports:[
+        ProfileModule,
+        ProfilePictureModule,
+        MenuBarHomeModule,
         AppRoutingModule,
         FormsModule,
     ],
-    exports: [HomePageComponent]
+    exports: [HomePageComponent,MenuBarHomeComponent]
 })
 export class HomePageModule { }

@@ -1,3 +1,4 @@
+import { TicTacToeComponent } from './home/TicTacToe/TicTacToeComponent/tic-tac-toe.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterFormComponent } from './welcome/RegisterFormComponent/register-form.component';
@@ -7,6 +8,7 @@ import { LoginPageComponent } from './welcome/LoginPageComponent/login-page.comp
 import { LoginFormComponent } from './welcome/LoginFormComponent/login-form.component';
 import { WelcomeFormComponent } from './home/WelcomeFormComponent/welcome-form.component';
 import { HomePageComponent } from './home/HomePageComponent/home-page.component';
+import { TicTacToePageComponent } from './home/TicTacToe/TicTacToePageComponent/tic-tac-toe-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'welcome', component: WelcomeFormComponent },
   { path: 'home', component: HomePageComponent },
+  { path: 'tictactoe', component: TicTacToePageComponent },
 
 ];
 
